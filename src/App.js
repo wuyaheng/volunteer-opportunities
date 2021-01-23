@@ -8,8 +8,7 @@ class App extends Component {
   state = {
     nta: [],
     sel_nta: "",
-    results: [],
-    filtered: []
+    opportunities: []
   }
 
   componentDidMount() {
@@ -17,8 +16,9 @@ class App extends Component {
       {
         sel_nta: "Battery Park City-Lower Manhattan",
       },
-      this.fetchSites
-    );
+      () => {
+      this.fetchOpportunities()
+      });
     this.fetchnta();
   }
 
@@ -35,7 +35,7 @@ class App extends Component {
     }
   } 
 
-  fetchSites = async () => { 
+  fetchOpportunities = async () => { 
     const res = await axios.get('https://data.cityofnewyork.us/resource/shpd-5q9m.json',
     {
       params: {
@@ -44,23 +44,26 @@ class App extends Component {
     }
     )
     this.setState({
-      filtered: res.data
+      opportunities: res.data
     })
   }
+
+
 
   handleInputChange = (event) => {
     this.setState(
       {
         sel_nta: event.target.value
       },
-      this.fetchSites
-    )
+      () => {
+      this.fetchOpportunities()
+      })
   }
 
   render() {
     return (
       <>
-      <nav className="navbar navbar-light bg-dark justify-content-center">
+      <nav className="navbar navbar-light bg-dark justify-content-center"> 
           <span className="navbar-brand mb-0 h1 text-white pt-1">
           NYC Volunteer Opportunities  
           </span>
@@ -75,15 +78,9 @@ class App extends Component {
     
         
       <div className="card">
-        <MapBox results={this.state.filtered} /> 
+        <MapBox results={this.state.opportunities} /> 
       </div>
       </div>
-
-          <div className="col-md-4 p-0">
-              <div className="card">
-                <MapBox results={this.state.filtered} /> 
-              </div>
-          </div>
 
       </div>
         <div className="row justify-content-center">
