@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+.navbar-light,.navbar-light {
+  margin: 0 auto !important;
+}
+
+#mapid { 
+  height: 70vh; 
+}
+
+.leaflet-tooltip{
+  width: 350px !important;
+  white-space: normal !important;
+}
+
+p {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+select, option:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+h5 {
+  font-family: 'Roboto', sans-serif;
+  margin-bottom: 0.2rem !important;
+}
+
+
+.custom-div-icon i.awesome {
+  margin: 12px auto;
+  font-size: 17px;
+}
+
+.marker-pin {
+  width: 30px;
+  height: 30px;
+  border-radius: 50% 50% 50% 0;
+  position: absolute;
+  transform: rotate(-45deg);
+  left: 50%;
+  top: 50%;
+  margin: -15px 0 0 -15px;
+}
+
+.marker-pin::after {
+    content: '';
+    width: 24px;
+    height: 24px;
+    margin: 3px 0 0 3px;
+    background: #fff;
+    position: absolute;
+    border-radius: 50%;
+ }
+
+
+.custom-div-icon i {
+   position: absolute;
+   width: 22px;
+   font-size: 16px;
+   left: 0;
+   right: 0;
+   margin: 10px auto;
+   padding-top: 2px;
+   text-align: center;
+   color: #1e1b18 !important;
+}
+
+@media only screen and (max-width: 768px) {
+  .container {
+    width: 90% !important;
+  }
+}
