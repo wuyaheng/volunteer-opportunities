@@ -5,7 +5,7 @@ function SearchForm({ results, handleInputChange }) {
         <div className="input-group mb-2">
             <select className="custom-select" id="inputGroupSelect01" onChange={handleInputChange}>
                 {results.map((ele, i) => (
-                    <option key={i + "-el"} value={ele}>{ele}</option> 
+                    ele ? <option key={i + "-el"} value={ele}>{ele}</option> : null
                 ))}
             </select>
         </div>

@@ -66,21 +66,30 @@ class App extends Component {
           </span>
       </nav>
    
-      <div className="container">
-      <div className="row">
-      <h5 className="mt-2">Choose a neighborhood</h5>
+      <div className="container-fluid">
+      <div className="row mt-2">
+
+      <div className="col-md-4">
+      <h5>&nbsp;Choose a neighborhood</h5>
         <SearchForm results={this.state.nta} handleInputChange={this.handleInputChange} /> 
+    
+        
+      <div className="card">
+        <MapBox results={this.state.filtered} /> 
       </div>
-        <div className="row">
-          <div className="col-md-12 p-0">
+      </div>
+
+          <div className="col-md-4 p-0">
               <div className="card">
                 <MapBox results={this.state.filtered} /> 
               </div>
-            </div>
+          </div>
+
+      </div>
+        <div className="row justify-content-center">
+          <p>Data Source: <a target="_blank" rel="noopener noreferrer" aria-label="NYC open data" href="https://data.cityofnewyork.us/Social-Services/Volunteer-Opportunities-and-Finding-Organizations/shpd-5q9m">NYC OpenData</a></p>
         </div>
-        <div className="row justify-content-end mb-0">
-          <p className="mb-0">Data Source: <a target="_blank" rel="noopener noreferrer" aria-label="NYC open data" href="https://data.cityofnewyork.us/Social-Services/Volunteer-Opportunities-and-Finding-Organizations/shpd-5q9m">NYC OpenData</a></p>
-        </div>
+
        </div> 
       </>
     )
