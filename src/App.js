@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import MapBox from "./components/MapBox/index"
 import SearchForm from "./components/SearchForm/index";
 import ResultList from "./components/ResultList/index";
+import Table from "./components/Table/index";
 import './App.css';
 import axios from "axios"
 
@@ -73,7 +74,7 @@ class App extends Component {
       <div className="container-fluid">
       <div className="row mt-2">
 
-      <div className="col-md-5">
+      <div className="col-md-6">
       <h5>&nbsp;Choose a neighborhood</h5>
         <SearchForm results={this.state.nta} handleInputChange={this.handleInputChange} /> 
     
@@ -83,10 +84,13 @@ class App extends Component {
       </div>
       </div>
 
-      <div className="col-md-7">
+      <div className="col-md-6">
         <ResultList results={this.state.opportunities} />
       </div>
 
+      </div>
+      <div className="row">
+        <Table results={this.state.opportunities} />
       </div>
         <div className="row justify-content-center">
           <p>Data Source: <a target="_blank" rel="noopener noreferrer" aria-label="NYC open data" href="https://data.cityofnewyork.us/Social-Services/Volunteer-Opportunities-and-Finding-Organizations/shpd-5q9m">NYC OpenData</a></p>

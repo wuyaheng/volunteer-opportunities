@@ -3,6 +3,7 @@ import { Pie } from "react-chartjs-2";
 import 'chartjs-plugin-labels';
 
 function ResultList(props) {
+    console.log(props.results)
 
   const PieChart = ({ type }) => {
     const obj = {};
@@ -21,7 +22,11 @@ function ResultList(props) {
         "#cc8b86",
         "#b392ac",
         "#abc4ff",
-        "#e2cfc4"
+        "#e2cfc4",
+        "#4281a4",
+        "#c0c0c0",
+        "#896a67",
+        "#8d99ae"
       ];
 
     let options = {
