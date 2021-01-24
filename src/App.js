@@ -81,7 +81,6 @@ class App extends Component {
   }
 
   handleOppChange = (event) => {
-    console.log(event.target.value)
     const sel_opp = event.target.value;
     const filteredOpp = this.state.opportunities.filter(ele => {
       return ele.opportunity_id === sel_opp
@@ -111,7 +110,6 @@ class App extends Component {
         {
           this.state.sel_nta
           && <OpportunitiesSelect results={this.state.opportunities} handleOppChange={this.handleOppChange} /> 
-    
         }
        
         
@@ -128,7 +126,7 @@ class App extends Component {
 
       </div>
       <div className="row mt-2">
-        <Table results={this.state.opportunities} />
+        <Table results={this.state.opp.length > 0 ? this.state.opp : this.state.opportunities} /> 
       </div>
         <div className="row justify-content-center">
           <p>Data Source: <a target="_blank" rel="noopener noreferrer" aria-label="NYC open data" href="https://data.cityofnewyork.us/Social-Services/Volunteer-Opportunities-and-Finding-Organizations/shpd-5q9m">NYC OpenData</a></p>
