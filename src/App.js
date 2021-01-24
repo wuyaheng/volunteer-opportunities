@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import MapBox from "./components/MapBox/index"
 import SearchForm from "./components/SearchForm/index";
+import ResultList from "./components/ResultList/index";
 import './App.css';
 import axios from "axios"
 
@@ -72,7 +73,7 @@ class App extends Component {
       <div className="container-fluid">
       <div className="row mt-2">
 
-      <div className="col-md-4">
+      <div className="col-md-5">
       <h5>&nbsp;Choose a neighborhood</h5>
         <SearchForm results={this.state.nta} handleInputChange={this.handleInputChange} /> 
     
@@ -80,6 +81,10 @@ class App extends Component {
       <div className="card">
         <MapBox results={this.state.opportunities} /> 
       </div>
+      </div>
+
+      <div className="col-md-7">
+        <ResultList results={this.state.opportunities} />
       </div>
 
       </div>
