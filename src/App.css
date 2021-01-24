@@ -2,7 +2,7 @@
 
 .navbar-light,.navbar-light {
   margin: 0 auto !important;
-  background-color: #4281a4 !important;
+  background-color: #2589bd !important;
 }
 
 #mapid { 
@@ -80,5 +80,6 @@ table {
   }
   table {
     display: none;
+    visibility: hidden; 
   }
 }

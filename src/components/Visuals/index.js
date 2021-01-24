@@ -9,7 +9,7 @@ function Visuals(props) {
     const obj = {};
     const colorArray = [
         "#c0c0c0",
-        "#4281a4",
+        "#2589bd",
         "#a0ced9",
         "#f5cb5c",
         "#cc8b86",
