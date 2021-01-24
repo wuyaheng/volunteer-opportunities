@@ -127,7 +127,7 @@ class App extends Component {
 
       </div>
       <div className="row mt-2">
-      <div className="col-md-12">
+      <div className="col-md-12 table-responsive">
         <Table results={this.state.opp.length > 0 ? this.state.opp : this.state.opportunities} /> 
       </div>
       </div>

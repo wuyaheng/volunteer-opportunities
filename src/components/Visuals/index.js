@@ -94,7 +94,7 @@ function Visuals(props) {
 
 
   return (
-        <div className="card">
+        <div className="card mb-2">
           <PieChart type="recurrence_type" />
         </div>
   );

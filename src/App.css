@@ -73,4 +73,7 @@ h5 {
   .container {
     width: 90% !important;
   }
+  table {
+    display: none;
+  }
 }
