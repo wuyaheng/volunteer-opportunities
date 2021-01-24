@@ -6,7 +6,11 @@
 }
 
 #mapid { 
-  height: 73vh; 
+  height: 70vh; 
+}
+
+#map-container {
+  height: 70vh;
 }
 
 
@@ -81,5 +85,8 @@ table {
   table {
     display: none;
     visibility: hidden; 
+  }
+  .map-container {
+    margin-top: 2px !important;
   }
 }

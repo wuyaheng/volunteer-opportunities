@@ -88,7 +88,7 @@ class App extends Component {
       </nav>
    
       <div className="container-fluid">
-      <div className="row mt-2">
+      <div className="row mt-2 vh-70">
 
       <div className="col-md-6">
       <h5>&nbsp;Choose a Neighborhood</h5>
@@ -106,7 +106,7 @@ class App extends Component {
       </div>
 
       <div className="col-md-6">
-      <div className="card">
+      <div className="card mt-4 map-container">
       <MapBox results={this.state.opp.length > 0 ? this.state.opp : this.state.opportunities} /> 
       </div>
       </div>
