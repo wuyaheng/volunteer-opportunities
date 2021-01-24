@@ -27,9 +27,6 @@ class App extends Component {
     this.fetchnta();
   }
 
-  componentDidUpdate() {
-    console.log(this.state.opportunities)
-  }
 
   fetchOpp = async () => {
     try {
