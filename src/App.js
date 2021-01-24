@@ -28,19 +28,6 @@ class App extends Component {
   }
 
 
-  fetchOpp = async () => {
-    try {
-      const res = await axios.get(
-        'https://data.cityofnewyork.us/resource/shpd-5q9m.json?$group=opportunity_id&$select=opportunity_id'
-      );
-      this.setState({
-        opp: res.data.map((x) => x.opportunity_id)
-      });
-    } catch (error) {
-      console.log(error)
-    }
-  } 
-
   fetchnta = async () => {
     try {
       const res = await axios.get(
@@ -67,7 +54,6 @@ class App extends Component {
       opportunities: res.data
     })
   }
-
 
 
   handleInputChange = (event) => {
@@ -105,9 +91,9 @@ class App extends Component {
       <div className="row mt-2">
 
       <div className="col-md-6">
-      <h5>&nbsp;Choose a neighborhood</h5>
+      <h5>&nbsp;Choose a Neighborhood</h5>
         <SearchForm results={this.state.nta} handleInputChange={this.handleInputChange} /> 
-        <h5>&nbsp;You can also filter by opportunity</h5>
+        <h5>&nbsp;Select a Volunteer Opportunity</h5>
         {
           this.state.sel_nta
           && <OpportunitiesSelect results={this.state.opportunities} handleOppChange={this.handleOppChange} /> 
