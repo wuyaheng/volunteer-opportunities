@@ -9,9 +9,9 @@ function Table(props) {
         <table class="table table-hover">
         <thead>
             <tr>
-            <th scope="col-4">Volunteer Opportunity</th>
-            <th scope="col-4">Website</th>
-            <th scope="col-4">Requirements</th> 
+            <th scope="col" width="30%">Volunteer Opportunity</th>
+            <th scope="col" width="30%">Website</th>
+            <th scope="col" width="40%">Requirements</th> 
             </tr>
         </thead>
         <tbody>
