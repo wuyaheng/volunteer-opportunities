@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import MapBox from "./components/MapBox/index"
 import SearchForm from "./components/SearchForm/index";
-import ResultList from "./components/ResultList/index";
+import Visuals from "./components/Visuals/index";
 import Table from "./components/Table/index";
 import './App.css';
 import axios from "axios"
@@ -85,7 +85,7 @@ class App extends Component {
       </div>
 
       <div className="col-md-6">
-        <ResultList results={this.state.opportunities} />
+        <Visuals results={this.state.opportunities} />
       </div>
 
       </div>

@@ -2,7 +2,7 @@ import React from "react";
 import { Pie } from "react-chartjs-2";
 import 'chartjs-plugin-labels';
 
-function ResultList(props) {
+function Visuals(props) {
     console.log(props.results)
 
   const PieChart = ({ type }) => {
@@ -112,4 +112,4 @@ function ResultList(props) {
   );
 }
 
-export default ResultList;
+export default Visuals;
