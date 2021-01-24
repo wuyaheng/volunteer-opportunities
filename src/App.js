@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import MapBox from "./components/MapBox/index"
 import SearchForm from "./components/SearchForm/index";
-import Visuals from "./components/Visuals/index";
+import OpportunitiesSelect from "./components/OpportunitiesSelect/index";
+// import Visuals from "./components/Visuals/index";
 import Table from "./components/Table/index";
 import './App.css';
 import axios from "axios"
@@ -9,7 +10,9 @@ import axios from "axios"
 class App extends Component {
   state = {
     nta: [],
+    opp: [],
     sel_nta: "",
+    sel_opp: "", 
     opportunities: []
   }
 
@@ -23,6 +26,23 @@ class App extends Component {
       });
     this.fetchnta();
   }
+
+  componentDidUpdate() {
+    console.log(this.state.opportunities)
+  }
+
+  fetchOpp = async () => {
+    try {
+      const res = await axios.get(
+        'https://data.cityofnewyork.us/resource/shpd-5q9m.json?$group=opportunity_id&$select=opportunity_id'
+      );
+      this.setState({
+        opp: res.data.map((x) => x.opportunity_id)
+      });
+    } catch (error) {
+      console.log(error)
+    }
+  } 
 
   fetchnta = async () => {
     try {
@@ -45,6 +65,7 @@ class App extends Component {
       }
     }
     )
+
     this.setState({
       opportunities: res.data
     })
@@ -59,6 +80,19 @@ class App extends Component {
       },
       () => {
       this.fetchOpportunities()
+      })
+  }
+
+  handleOppChange = (event) => {
+    console.log(event.target.value)
+    const sel_opp = event.target.value;
+    const filteredOpp = this.state.opportunities.filter(ele => {
+      return ele.opportunity_id === sel_opp
+    })
+    this.setState(
+      {
+        sel_opp: event.target.value,
+        opp: filteredOpp
       })
   }
 
@@ -77,19 +111,26 @@ class App extends Component {
       <div className="col-md-6">
       <h5>&nbsp;Choose a neighborhood</h5>
         <SearchForm results={this.state.nta} handleInputChange={this.handleInputChange} /> 
+        {
+          this.state.sel_nta
+          && <OpportunitiesSelect results={this.state.opportunities} handleOppChange={this.handleOppChange} /> 
     
+        }
+       
         
-      <div className="card">
-        <MapBox results={this.state.opportunities} /> 
-      </div>
+ 
+      {/* <Visuals results={this.state.opportunities} /> */}
+   
       </div>
 
       <div className="col-md-6">
-        <Visuals results={this.state.opportunities} />
+      <div className="card">
+      <MapBox results={this.state.opp.length > 0 ? this.state.opp : this.state.opportunities} /> 
+      </div>
       </div>
 
       </div>
-      <div className="row">
+      <div className="row mt-2">
         <Table results={this.state.opportunities} />
       </div>
         <div className="row justify-content-center">
