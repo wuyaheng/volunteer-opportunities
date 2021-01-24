@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import MapBox from "./components/MapBox/index"
 import SearchForm from "./components/SearchForm/index";
 import OpportunitiesSelect from "./components/OpportunitiesSelect/index";
-// import Visuals from "./components/Visuals/index";
+import Visuals from "./components/Visuals/index";
 import Table from "./components/Table/index";
 import './App.css';
 import axios from "axios"
@@ -107,6 +107,7 @@ class App extends Component {
       <div className="col-md-6">
       <h5>&nbsp;Choose a neighborhood</h5>
         <SearchForm results={this.state.nta} handleInputChange={this.handleInputChange} /> 
+        <h5>&nbsp;You can also filter by opportunity</h5>
         {
           this.state.sel_nta
           && <OpportunitiesSelect results={this.state.opportunities} handleOppChange={this.handleOppChange} /> 
@@ -114,7 +115,7 @@ class App extends Component {
        
         
  
-      {/* <Visuals results={this.state.opportunities} /> */}
+      <Visuals results={this.state.opp.length > 0 ? this.state.opp : this.state.opportunities} />
    
       </div>
 
@@ -126,9 +127,11 @@ class App extends Component {
 
       </div>
       <div className="row mt-2">
+      <div className="col-md-12">
         <Table results={this.state.opp.length > 0 ? this.state.opp : this.state.opportunities} /> 
       </div>
-        <div className="row justify-content-center">
+      </div>
+        <div className="row justify-content-center mb-1">
           <p>Data Source: <a target="_blank" rel="noopener noreferrer" aria-label="NYC open data" href="https://data.cityofnewyork.us/Social-Services/Volunteer-Opportunities-and-Finding-Organizations/shpd-5q9m">NYC OpenData</a></p>
         </div>
 

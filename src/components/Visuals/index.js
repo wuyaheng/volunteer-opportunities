@@ -8,24 +8,12 @@ function Visuals(props) {
   const PieChart = ({ type }) => {
     const obj = {};
     const colorArray = [
-        "#f5cac3",
-        "#ffcb77",
         "#c5baaf",
-        "#cc8b86",
-        "#84a59d",
-        "#f7ede2",
-        "#d8e2dc",
-        "#f4acb7",
-        "#9d8189",
         "#a0ced9",
         "#f5cb5c",
         "#cc8b86",
-        "#b392ac",
-        "#abc4ff",
-        "#e2cfc4",
         "#4281a4",
         "#c0c0c0",
-        "#896a67",
         "#8d99ae"
       ];
 
@@ -49,7 +37,7 @@ function Visuals(props) {
       },
       title: {
         display: true,
-        text: 'Volunteer Opportunities',
+        text: 'Recurrence Type',
         fontSize: 15
      },
       scales: {
@@ -74,8 +62,8 @@ function Visuals(props) {
       }
     };
 
-    props.results.forEach((restaurant) => {
-      const key = restaurant[type];
+    props.results.forEach((ele) => {
+      const key = ele[type];
       if (key)
         if (obj[key]) {
           obj[key] += 1;
@@ -107,7 +95,7 @@ function Visuals(props) {
 
   return (
         <div className="card">
-          <PieChart type="opportunity_id" />
+          <PieChart type="recurrence_type" />
         </div>
   );
 }
