@@ -91,7 +91,7 @@ class App extends Component {
     return (
       <>
       <nav className="navbar navbar-light bg-dark justify-content-center"> 
-          <span className="navbar-brand mb-0 h1 text-white pt-1">
+          <span className="navbar-brand text-white brand-logo center" style={{fontSize: "25px"}}>
           NYC Volunteer Opportunities  
           </span>
       </nav>
@@ -100,9 +100,9 @@ class App extends Component {
       <div className="row mt-2 vh-70">
 
       <div className="col-md-4">
-      <h5>&nbsp;Choose a Neighborhood</h5>
+      <h6>&nbsp;Choose a Neighborhood</h6>
         <SearchForm results={this.state.nta} handleInputChange={this.handleInputChange} /> 
-        <h5>&nbsp;Select a Volunteer Opportunity</h5>
+        <h6>&nbsp;Select a Volunteer Opportunity</h6>
         {
           this.state.sel_nta
           && <OpportunitiesSelect results={this.state.opportunities} handleOppChange={this.handleOppChange} /> 

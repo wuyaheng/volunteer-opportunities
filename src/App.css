@@ -78,19 +78,15 @@ h5 {
    color: #495057 !important;
 }
 
-table {
-  width: 100%;
-}
 
 @media only screen and (max-width: 768px) {
   .container {
     width: 90% !important;
   }
-  table {
-    display: none;
-    visibility: hidden; 
-  }
   .map-container {
     margin-top: 2px !important;
+  }
+  .navbar-brand {
+    font-size: 20px !important;
   }
 }
