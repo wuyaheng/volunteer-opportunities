@@ -28,7 +28,7 @@ export default (props) => {
 
       var iconOpportunity = L.divIcon({ 
         className: 'custom-div-icon',
-        html: "<div style='background-color:#EB6D47;' class='marker-pin'></div><i class='fas fa-hand-holding-heart'></i>",   
+        html: "<div style='background-color:#f9a03f;' class='marker-pin'></div><i class='fas fa-hand-holding-heart'></i>",   
         iconSize: [30, 42],
         iconAnchor: [15, 42]
     });
