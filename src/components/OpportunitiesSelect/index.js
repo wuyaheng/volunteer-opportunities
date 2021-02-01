@@ -5,6 +5,7 @@ function OpportunitiesSelect({ results, handleOppChange }) {
     return (
         <div className="input-group mb-2">
             <select className="custom-select" id="inputGroupSelect02" onChange={handleOppChange}>
+                <option value="All Volunteer Opportunities" selected="selected">All Volunteer Opportunities</option>
                 {results.map((ele, i) => (
                     ele.opportunity_id ? <option key={i + "-el"} value={ele.opportunity_id}>{ele.opportunity_id}</option> : null
                 ))}
