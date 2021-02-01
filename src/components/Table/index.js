@@ -18,14 +18,6 @@ const Table = (props) => {
         setGridColumnApi(params.columnApi);
         params.api.sizeColumnsToFit();
     }
-  
-    var defaultColDef = {
-      flex: 1,
-      resizable: true,
-      sortable: true, 
-      wrapText: true,    
-      autoHeight: true
-    }
 
     let rowData = []
     props.results.map((ele, i) => rowData.push( 
