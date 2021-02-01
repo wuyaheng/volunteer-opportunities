@@ -92,7 +92,7 @@ class App extends Component {
       <>
       <nav className="navbar navbar-light bg-dark justify-content-center"> 
           <span className="navbar-brand text-white brand-logo center" style={{fontSize: "25px"}}>
-          NYC Volunteer Opportunities  
+          NYC Volunteer Opportunities
           </span>
       </nav>
    
@@ -100,13 +100,15 @@ class App extends Component {
       <div className="row mt-2 vh-70">
 
       <div className="col-md-4">
-      <h6>&nbsp;Choose a Neighborhood</h6>
+      <div className="card mb-2 p-2 searchCard">
+      <h6>&nbsp;<b>Choose a Neighborhood</b></h6>
         <SearchForm results={this.state.nta} handleInputChange={this.handleInputChange} /> 
-        <h6>&nbsp;Select a Volunteer Opportunity</h6>
+        <h6>&nbsp;<b>Select a Volunteer Opportunity</b></h6> 
         {
           this.state.sel_nta
           && <OpportunitiesSelect results={this.state.opportunities} handleOppChange={this.handleOppChange} /> 
         }
+        </div>
       <Visuals results={this.state.opp.length > 0 ? this.state.opp : this.state.opportunities} />
       </div>
       <div className="col-md-8">
