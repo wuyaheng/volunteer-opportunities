@@ -56,8 +56,6 @@ class App extends Component {
     }
     const res = await axios.get('https://data.cityofnewyork.us/resource/shpd-5q9m.json',options)
 
-    
-
     this.setState({
       opportunities: res.data
     })
@@ -112,7 +110,7 @@ class App extends Component {
       <Visuals results={this.state.opp.length > 0 ? this.state.opp : this.state.opportunities} />
       </div>
       <div className="col-md-8">
-      <div className="card mt-4 map-container">
+      <div className="card mt-1 map-container">
       <MapBox results={this.state.opp.length > 0 ? this.state.opp : this.state.opportunities} /> 
       </div>
       </div>

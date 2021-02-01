@@ -2,15 +2,19 @@
 
 .navbar-light,.navbar-light {
   margin: 0 auto !important;
-  background-color: #2589bd !important;
+  background-color: #EB6D47 !important;
 }
 
 #mapid { 
-  height: 70vh; 
+  height: 60vh; 
 }
 
 #map-container {
-  height: 70vh;
+  height: 60vh;
+}
+
+canvas {
+  height: 40vh !important;
 }
 
 
@@ -71,7 +75,7 @@ h5 {
    margin: 10px auto;
    padding-top: 2px;
    text-align: center;
-   color: #1e1b18 !important;
+   color: #495057 !important;
 }
 
 table {
