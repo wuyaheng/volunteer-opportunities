@@ -6,6 +6,8 @@ import Visuals from "./components/Visuals/index";
 import Table from "./components/Table/index";
 import './App.css';
 import axios from "axios"
+const ALLNEIGHBORHOOD = "All Neighborhood"
+
 
 class App extends Component {
   state = {
@@ -19,7 +21,7 @@ class App extends Component {
   componentDidMount() {
     this.setState(
       {
-        sel_nta: "Battery Park City-Lower Manhattan",
+        sel_nta: ALLNEIGHBORHOOD,
       },
       () => {
       this.fetchOpportunities()
@@ -33,8 +35,10 @@ class App extends Component {
       const res = await axios.get(
         'https://data.cityofnewyork.us/resource/shpd-5q9m.json?$group=nta&$select=nta'
       );
+      const dropdownNta = res.data.map((x) => x.nta)
+      const dropdown = [ALLNEIGHBORHOOD,...dropdownNta]
       this.setState({
-        nta: res.data.map((x) => x.nta)
+        nta: dropdown
       });
     } catch (error) {
       console.log(error)
@@ -42,13 +46,17 @@ class App extends Component {
   } 
 
   fetchOpportunities = async () => { 
-    const res = await axios.get('https://data.cityofnewyork.us/resource/shpd-5q9m.json',
-    {
-      params: {
-        nta: this.state.sel_nta 
+    let options = {}
+    if (this.state.sel_nta !== ALLNEIGHBORHOOD) {
+      options = { 
+        params: {
+          nta: this.state.sel_nta 
+        }
       }
     }
-    )
+    const res = await axios.get('https://data.cityofnewyork.us/resource/shpd-5q9m.json',options)
+
+    
 
     this.setState({
       opportunities: res.data
@@ -64,6 +72,7 @@ class App extends Component {
       () => {
       this.fetchOpportunities()
       })
+
   }
 
   handleOppChange = (event) => {
@@ -78,6 +87,8 @@ class App extends Component {
       })
   }
 
+
+
   render() {
     return (
       <>
@@ -90,7 +101,7 @@ class App extends Component {
       <div className="container-fluid">
       <div className="row mt-2 vh-70">
 
-      <div className="col-md-6">
+      <div className="col-md-4">
       <h5>&nbsp;Choose a Neighborhood</h5>
         <SearchForm results={this.state.nta} handleInputChange={this.handleInputChange} /> 
         <h5>&nbsp;Select a Volunteer Opportunity</h5>
@@ -98,14 +109,9 @@ class App extends Component {
           this.state.sel_nta
           && <OpportunitiesSelect results={this.state.opportunities} handleOppChange={this.handleOppChange} /> 
         }
-       
-        
- 
       <Visuals results={this.state.opp.length > 0 ? this.state.opp : this.state.opportunities} />
-   
       </div>
-
-      <div className="col-md-6">
+      <div className="col-md-8">
       <div className="card mt-4 map-container">
       <MapBox results={this.state.opp.length > 0 ? this.state.opp : this.state.opportunities} /> 
       </div>

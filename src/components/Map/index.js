@@ -11,7 +11,7 @@ export default (props) => {
       MAP_ID.setAttribute("id", "mapid");
       MAP_CONTAINER.appendChild(MAP_ID);
 
-      const mymap = L.map("mapid").setView([props.lat, props.lon], 13);
+      const mymap = L.map("mapid").setView([props.lat, props.lon], 11); 
 
       L.tileLayer(
         "https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}",
@@ -33,11 +33,16 @@ export default (props) => {
         iconAnchor: [15, 42]
     });
 
-      props.pins.forEach((pin) =>
-        pin.opportunity_id ? L.marker([pin.latitude, pin.longitude],{icon: iconOpportunity}).addTo(mymap)
-        .bindPopup("<p><b>Volunteer Opportunity</b>: " + pin.opportunity_id + "</p><p><b>Title</b>: " + pin.title + "</p><p><b>Website</b>: <a href=" + pin.website + " target='_blank'>" + pin.website + "</a></p><p><b>Summary</b>: " + pin.summary + "</p><p><b>Address</b>: " + pin.street_address + ", " + pin.city + ", " + pin.state +" "+ pin.postcode +"</p><p><b>Recurrence Type</b>: " + pin.recurrence_type + "</p>") : null
-      );
+      props.pins.forEach((pin) => {
+        if (pin.latitude && pin.longitude && pin.opportunity_id) {
+          L.marker([pin.latitude, pin.longitude],{icon: iconOpportunity}).addTo(mymap)
+          .bindPopup("<p><b>Volunteer Opportunity</b>: " + pin.opportunity_id + "</p><p><b>Title</b>: " + pin.title + "</p><p><b>Website</b>: <a href=" + pin.website + " target='_blank'>" + pin.website + "</a></p><p><b>Summary</b>: " + pin.summary + "</p><p><b>Address</b>: " + pin.street_address + ", " + pin.city + ", " + pin.state +" "+ pin.postcode +"</p><p><b>Recurrence Type</b>: " + pin.recurrence_type + "</p>")
+        } 
+      })
 
+      function isFloat(n){
+        return Number(n) === n && n % 1 !== 0;
+       }
     }
 
     return () => (MAP_CONTAINER.innerHTML = ""); 
