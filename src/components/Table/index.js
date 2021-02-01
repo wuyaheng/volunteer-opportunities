@@ -19,6 +19,14 @@ const Table = (props) => {
         params.api.sizeColumnsToFit();
     }
   
+    var defaultColDef = {
+      flex: 1,
+      resizable: true,
+      sortable: true, 
+      wrapText: true,    
+      autoHeight: true
+    }
+
     let rowData = []
     props.results.map((ele, i) => rowData.push( 
       {Volunteer: ele.opportunity_id, 
@@ -31,7 +39,7 @@ const Table = (props) => {
         <div className="ag-theme-alpine" style={ { height: 400, width: 1550 } }>
             <AgGridReact
                 onGridReady={onGridReady}
-                rowData={rowData}>
+                rowData={rowData}> 
                 <AgGridColumn field="Volunteer"></AgGridColumn>
                 <AgGridColumn field="Website"></AgGridColumn>
                 <AgGridColumn field="Requirements"></AgGridColumn>
