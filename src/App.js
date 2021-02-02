@@ -97,7 +97,7 @@ class App extends Component {
       </nav>
    
       <div className="container-fluid">
-      <div className="row mt-2 vh-70">
+      <div className="row mt-1 mb-0 vh-62">
 
       <div className="col-md-4">
       <div className="card mb-2 p-2 searchCard">
@@ -112,13 +112,13 @@ class App extends Component {
       <Visuals results={this.state.opp.length > 0 ? this.state.opp : this.state.opportunities} />
       </div>
       <div className="col-md-8">
-      <div className="card mt-1 map-container">
+      <div className="card mt-2 map-container">
       <MapBox results={this.state.opp.length > 0 ? this.state.opp : this.state.opportunities} /> 
       </div>
       </div>
 
       </div>
-      <div className="row mt-2">
+      <div className="row">
       <div className="col-md-12 table-responsive">
         <Table results={this.state.opp.length > 0 ? this.state.opp : this.state.opportunities} /> 
       </div>
