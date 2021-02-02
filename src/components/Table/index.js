@@ -18,8 +18,6 @@ const Table = (props) => {
         setGridColumnApi(params.columnApi);
         params.api.sizeColumnsToFit(); 
     }
-
-
  
       let defaultColDef = {
         flex: 1,
