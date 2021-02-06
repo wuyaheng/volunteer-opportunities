@@ -68,7 +68,7 @@ class App extends Component {
         sel_nta: event.target.value
       },
       () => {
-      this.fetchOpportunities()
+      this.fetchOpportunities() 
       })
 
   }
@@ -90,8 +90,8 @@ class App extends Component {
   render() {
     return (
       <>
-      <nav className="navbar navbar-light bg-dark justify-content-center"> 
-          <span className="navbar-brand text-white brand-logo center" style={{fontSize: "25px"}}>
+      <nav className="nav-wrapper"> 
+          <span className="brand-logo center">
           NYC Volunteer Opportunities
           </span>
       </nav>

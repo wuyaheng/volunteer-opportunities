@@ -1,8 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
-.navbar-light,.navbar-light {
+.nav-wrapper {
   margin: 0 auto !important;
   background-color: #f9a03f !important;
+}
+
+.brand-logo {
+  font-size: 25px !important;
+}
+
+nav {
+  height: 50px !important;
+  line-height: 50px !important;
 }
 
 #mapid { 
@@ -86,7 +95,8 @@ h5 {
   .map-container {
     margin-top: 2px !important;
   }
-  .navbar-brand {
-    font-size: 20px !important;
+  .brand-logo {
+    font-size: 14px !important;
+    font-weight: 600 !important;
   }
 }
