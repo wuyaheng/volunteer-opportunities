@@ -40,14 +40,11 @@ export default (props) => {
         } 
       })
 
-      function isFloat(n){
-        return Number(n) === n && n % 1 !== 0;
-       }
     }
 
     return () => (MAP_CONTAINER.innerHTML = ""); 
   }, [props.lat, props.lon, props.pins]);
 
-  return <div id="map-container"></div>;
+  return <div id="map-container"></div>; 
 };
 
