@@ -11,7 +11,7 @@
 
 nav {
   height: 50px !important;
-  line-height: 50px !important;
+  line-height: 50px !important; 
 }
 
 #mapid { 
@@ -29,7 +29,7 @@ canvas {
 
 .leaflet-tooltip{
   width: 350px !important;
-  white-space: normal !important;
+  white-space: normal !important; 
 }
 
 p {

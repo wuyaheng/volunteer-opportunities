@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 import MapBox from "./components/MapBox/index"
+// import GeoMap from "./components/GeoMap/index";
 import SearchForm from "./components/SearchForm/index";
 import OpportunitiesSelect from "./components/OpportunitiesSelect/index";
 import Visuals from "./components/Visuals/index";
 import Table from "./components/Table/index";
 import './App.css';
 import axios from "axios"
+import geodata from "./data/nyc.geojson"
 const ALLNEIGHBORHOOD = "All Neighborhood"
 
 
@@ -15,7 +17,8 @@ class App extends Component {
     filteredOpportunities: [],
     sel_nta: "",
     sel_opp: "", 
-    opportunities: []
+    opportunities: [],
+    geo: []
   }
 
   componentDidMount() {
@@ -27,7 +30,20 @@ class App extends Component {
       this.fetchOpportunities()
       });
     this.fetchnta();
+    this.fetchgeodata()
   }
+
+  fetchgeodata = async () => {
+    try {
+      const res = await axios.get(geodata);
+      this.setState({
+        geo: res.data
+      });
+      console.log(this.state.geo)
+    } catch (error) {
+      console.log(error)
+    }
+  } 
 
 
   fetchnta = async () => {
@@ -111,8 +127,15 @@ class App extends Component {
         </div>
       <Visuals results={this.state.filteredOpportunities.length > 0 ? this.state.filteredOpportunities : this.state.opportunities} />
       </div>
-      <div className="col-md-8">
+
+      {/* <div className="col-md-4">
       <div className="card mt-2 map-container">
+      <GeoMap results={this.state.geo} /> 
+      </div>
+      </div> */}
+
+      <div className="col-md-8">
+      <div className="card mt-2 map-container"> 
       <MapBox results={this.state.filteredOpportunities.length > 0 ? this.state.filteredOpportunities : this.state.opportunities} /> 
       </div>
       </div>
