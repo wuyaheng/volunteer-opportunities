@@ -12,7 +12,7 @@ const ALLNEIGHBORHOOD = "All Neighborhood"
 class App extends Component {
   state = {
     nta: [],
-    opp: [],
+    filteredOpportunities: [],
     sel_nta: "",
     sel_opp: "", 
     opportunities: []
@@ -81,7 +81,7 @@ class App extends Component {
     this.setState(
       {
         sel_opp: event.target.value,
-        opp: filteredOpp
+        filteredOpportunities: filteredOpp
       })
   }
 
@@ -91,7 +91,7 @@ class App extends Component {
     return (
       <>
       <nav className="nav-wrapper"> 
-          <span className="brand-logo center">
+          <span className="brand-logo center"> 
           NYC Volunteer Opportunities
           </span>
       </nav>
@@ -109,21 +109,21 @@ class App extends Component {
           && <OpportunitiesSelect results={this.state.opportunities} handleOppChange={this.handleOppChange} /> 
         }
         </div>
-      <Visuals results={this.state.opp.length > 0 ? this.state.opp : this.state.opportunities} />
+      <Visuals results={this.state.filteredOpportunities.length > 0 ? this.state.filteredOpportunities : this.state.opportunities} />
       </div>
       <div className="col-md-8">
       <div className="card mt-2 map-container">
-      <MapBox results={this.state.opp.length > 0 ? this.state.opp : this.state.opportunities} /> 
+      <MapBox results={this.state.filteredOpportunities.length > 0 ? this.state.filteredOpportunities : this.state.opportunities} /> 
       </div>
       </div>
 
       </div>
       <div className="row">
       <div className="col-md-12 table-responsive">
-        <Table results={this.state.opp.length > 0 ? this.state.opp : this.state.opportunities} /> 
+        <Table results={this.state.filteredOpportunities.length > 0 ? this.state.filteredOpportunities : this.state.opportunities} /> 
       </div>
       </div>
-        <div className="row justify-content-center mb-1">
+        <div className="row justify-content-center mb-1"> 
           <p>Data Source: <a target="_blank" rel="noopener noreferrer" aria-label="NYC open data" href="https://data.cityofnewyork.us/Social-Services/Volunteer-Opportunities-and-Finding-Organizations/shpd-5q9m">NYC OpenData</a></p>
         </div>
 
