@@ -11,7 +11,9 @@ export default (props) => {
       MAP_ID.setAttribute("id", "mapid");
       MAP_CONTAINER.appendChild(MAP_ID);
 
-      const mymap = L.map("mapid").setView([props.lat, props.lon], 11); 
+      let mymap; 
+      props.pins.length > 200 ? 
+      mymap = L.map("mapid").setView([props.lat, props.lon], 11) : mymap = L.map("mapid").setView([props.lat, props.lon], 15)
 
       L.tileLayer(
         "https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}",
