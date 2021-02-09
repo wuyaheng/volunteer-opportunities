@@ -113,11 +113,11 @@ class App extends Component {
       </nav>
    
       <div className="container-fluid">
-      <div className="row mt-1 mb-0 vh-62">
+      <div className="row mt-1 mb-0 flex">
 
       <div className="col-md-4">
-      <div className="card mb-2 p-2 searchCard">
-      <h6>&nbsp;<b>Choose a Neighborhood</b></h6>
+      <div className="searchCard">
+      <h6>&nbsp;<b>Choose a Neighborhood</b></h6> 
         <SearchForm results={this.state.nta} handleInputChange={this.handleInputChange} /> 
         <h6>&nbsp;<b>Select a Volunteer Opportunity</b></h6> 
         {
@@ -141,12 +141,12 @@ class App extends Component {
       </div>
 
       </div>
-      <div className="row">
+      <div className="row mb-0">
       <div className="col-md-12 table-responsive">
         <Table results={this.state.filteredOpportunities.length > 0 ? this.state.filteredOpportunities : this.state.opportunities} /> 
       </div>
       </div>
-        <div className="row justify-content-center mb-1"> 
+        <div className="row justify-content-center mb-1 mt-0"> 
           <p>Data Source: <a target="_blank" rel="noopener noreferrer" aria-label="NYC open data" href="https://data.cityofnewyork.us/Social-Services/Volunteer-Opportunities-and-Finding-Organizations/shpd-5q9m">NYC OpenData</a></p>
         </div>
 

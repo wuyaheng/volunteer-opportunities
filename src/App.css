@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+
 .nav-wrapper {
   margin: 0 auto !important;
   background-color: #f9a03f !important;
@@ -15,11 +20,11 @@ nav {
 }
 
 #mapid { 
-  height: 62vh; 
+  min-height: 60vh; 
 }
 
 #map-container {
-  height: 62vh;
+  min-height: 60vh;
 }
 
 canvas {
