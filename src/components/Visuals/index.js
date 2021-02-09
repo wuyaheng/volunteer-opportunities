@@ -8,8 +8,8 @@ function Visuals(props) {
   const PieChart = ({ type }) => {
     const obj = {};
     const colorArray = [
-        "#8a817c",
-        "#f9a03f",
+        "#bac7be",
+        "#4c956c",
         "#a0ced9",
         "#f5cb5c",
         "#cc8b86",
