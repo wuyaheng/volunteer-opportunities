@@ -67,7 +67,7 @@ const Table = (props) => {
       }]
 
     return (
-        <div className="ag-theme-alpine" style={ { height: 400, width: "100%" } }>
+        <div className="ag-theme-alpine" style={ { height: 500, width: "100%" } }>
             <AgGridReact
                 onGridReady={onGridReady}
                 rowData={rowData}

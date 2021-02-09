@@ -20,11 +20,11 @@ nav {
 }
 
 #mapid { 
-  min-height: 60vh; 
+  min-height: 56vh; 
 }
 
 #map-container {
-  min-height: 60vh;
+  min-height: 56vh;
 }
 
 canvas {
