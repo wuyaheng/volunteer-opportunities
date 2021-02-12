@@ -1,3 +1,3 @@
-# volunteer-opportunities
+# NYC volunteer Opportunities Dashboard
 
-![vol](https://user-images.githubusercontent.com/52837649/105640413-e7d53580-5e4b-11eb-8e0a-9593a3233795.png)
+![volunteerOpp](https://user-images.githubusercontent.com/52837649/107301219-1147b100-6a49-11eb-8ccc-e8a31e8cec22.png)
