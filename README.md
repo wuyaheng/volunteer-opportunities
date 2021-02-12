@@ -23,7 +23,7 @@ React, ag-Grid, Leaflet, Materialize, JavaScript
 https://volunteer-opportunities-nyc.netlify.app/
 
 ## Usage
-Click on marker of the map to know more about the volunteer opportunities
+Click on marker of the map to know more about the volunteer opportunity
 
 ## Questions
 ![user profile image](https://avatars.githubusercontent.com/u/52837649?v=4)
