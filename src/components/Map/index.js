@@ -1,5 +1,6 @@
 import React from "react";
 import L from "leaflet";
+import "leaflet-extra-markers";
 
 
 export default (props) => {
@@ -28,16 +29,18 @@ export default (props) => {
         }
       ).addTo(mymap);
 
-      var iconOpportunity = L.divIcon({   
-        className: 'custom-div-icon',
-        html: "<div style='background-color:#4c956c;' class='marker-pin'></div><i class='fas fa-hand-holding-heart'></i>",   
-        iconSize: [30, 42],
-        iconAnchor: [15, 42]
-    });
+
+        // Creates a red marker with the coffee icon
+      var redMarker = L.ExtraMarkers.icon({
+        markerColor: 'green',
+        shape: 'star'
+      });
+ 
+      
 
       props.pins.forEach((pin) => {
         if (pin.latitude && pin.longitude && pin.opportunity_id) {
-          L.marker([pin.latitude, pin.longitude],{icon: iconOpportunity}).addTo(mymap)
+          L.marker([pin.latitude, pin.longitude], {icon: redMarker}).addTo(mymap)
           .bindPopup("<p><b>Volunteer Opportunity</b>: " + pin.opportunity_id + "</p><p><b>Title</b>: " + pin.title + "</p><p><b>Website</b>: <a href=" + pin.website + " target='_blank'>" + pin.website + "</a></p><p><b>Summary</b>: " + pin.summary + "</p><p><b>Address</b>: " + pin.street_address + ", " + pin.city + ", " + pin.state +" "+ pin.postcode +"</p><p><b>Recurrence Type</b>: " + pin.recurrence_type + "</p>")
         } 
       })
