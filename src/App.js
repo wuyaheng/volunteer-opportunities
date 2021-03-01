@@ -116,9 +116,9 @@ class App extends Component {
       <div className="col-md-4">
       <div className="card" style={{height: "66vh"}}>
       <div className="searchCard">
-      <h6 className="pl-2"><b>Choose a Neighborhood</b></h6> 
+      <h6>&nbsp; <b>Choose a Neighborhood</b></h6> 
         <SearchForm results={this.state.nta} handleInputChange={this.handleInputChange} /> 
-        <h6 className="pl-2"><b>Select a Volunteer Opportunity</b></h6> 
+        <h6>&nbsp; <b>Select a Volunteer Opportunity</b></h6> 
         {
           this.state.sel_nta
           && <OpportunitiesSelect results={this.state.opportunities} handleOppChange={this.handleOppChange} /> 
