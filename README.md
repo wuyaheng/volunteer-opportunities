@@ -20,7 +20,7 @@ NYC Volunteer Opportunities is a search tool that allows users to find available
 React, ag-Grid, Leaflet, Materialize, JavaScript
 
 ## Link
-https://volunteer-opportunities-nyc.netlify.app/
+https://volunteer-nyc.netlify.app/
 
 ## Usage
 Click on marker of the map to know more about the volunteer opportunity
