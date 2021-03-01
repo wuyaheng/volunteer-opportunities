@@ -2,7 +2,7 @@ import React from "react";
 
 function SearchForm({ results, handleInputChange }) {
     return (
-        <div className="input-group mb-2">
+        <div className="input-group pl-2 pr-2">
             <select className="custom-select" id="inputGroupSelect01" onChange={handleInputChange}>
                 {results.sort(function(a, b) {
                     if(a.toLowerCase() < b.toLowerCase()) return -1;

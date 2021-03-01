@@ -10,15 +10,14 @@ import axios from "axios"
 import geodata from "./data/nyc.geojson"
 const ALLNEIGHBORHOOD = "All Neighborhood"
 
-
 class App extends Component {
   state = {
     nta: [],
     filteredOpportunities: [],
     sel_nta: "",
     sel_opp: "", 
-    opportunities: [],
-    geo: []
+    opportunities: []
+    // geo: []
   }
 
   componentDidMount() {
@@ -30,20 +29,20 @@ class App extends Component {
       this.fetchOpportunities()
       });
     this.fetchnta();
-    this.fetchgeodata()
+    // this.fetchgeodata()
   }
 
-  fetchgeodata = async () => {
-    try {
-      const res = await axios.get(geodata);
-      this.setState({
-        geo: res.data
-      });
-      console.log(this.state.geo)
-    } catch (error) {
-      console.log(error)
-    }
-  } 
+  // fetchgeodata = async () => {
+  //   try {
+  //     const res = await axios.get(geodata);
+  //     this.setState({
+  //       geo: res.data
+  //     });
+  //     console.log(this.state.geo)
+  //   } catch (error) {
+  //     console.log(error)
+  //   }
+  // } 
 
 
   fetchnta = async () => {
@@ -102,7 +101,6 @@ class App extends Component {
   }
 
 
-
   render() {
     return (
       <>
@@ -116,16 +114,18 @@ class App extends Component {
       <div className="row mt-1 mb-0 flex">
 
       <div className="col-md-4">
+      <div className="card">
       <div className="searchCard">
-      <h6>&nbsp;<b>Choose a Neighborhood</b></h6> 
+      <h6 className="pl-2"><b>Choose a Neighborhood</b></h6> 
         <SearchForm results={this.state.nta} handleInputChange={this.handleInputChange} /> 
-        <h6>&nbsp;<b>Select a Volunteer Opportunity</b></h6> 
+        <h6 className="pl-2"><b>Select a Volunteer Opportunity</b></h6> 
         {
           this.state.sel_nta
           && <OpportunitiesSelect results={this.state.opportunities} handleOppChange={this.handleOppChange} /> 
         }
         </div>
       <Visuals results={this.state.filteredOpportunities.length > 0 ? this.state.filteredOpportunities : this.state.opportunities} />
+      </div>
       </div>
 
       {/* <div className="col-md-4">
