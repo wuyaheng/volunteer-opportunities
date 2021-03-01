@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
 
 .flex {
   display: flex;
@@ -20,11 +21,11 @@ nav {
 }
 
 #mapid { 
-  min-height: 62vh; 
+  min-height: 66vh; 
 }
 
 #map-container {
-  min-height: 62vh;
+  min-height: 66vh;
 }
 
 canvas {
@@ -37,6 +38,11 @@ canvas {
   white-space: normal !important; 
 }
 
+.leaflet-container {
+  font-size: 1rem !important;
+  line-height: 2.3rem !important;
+}
+
 p {
   padding: 0 !important;
   margin: 0 !important;
@@ -47,12 +53,14 @@ select, option:focus {
   box-shadow: none !important;
 }
 
-h5 {
-  font-family: 'Roboto', sans-serif;
+h6 {
+  font-family: 'Poppins', sans-serif;
   margin-bottom: 0.2rem !important;
 }
 
-
+.fas {
+  font-weight: 900 !important;
+}
 
 @media only screen and (max-width: 768px) {
   .container {

@@ -30,17 +30,18 @@ export default (props) => {
       ).addTo(mymap);
 
 
-        // Creates a red marker with the coffee icon
-      var redMarker = L.ExtraMarkers.icon({
+      var heartMarker = L.ExtraMarkers.icon({
+        icon: 'fa-heart',
         markerColor: 'green',
-        shape: 'star'
+        shape: 'square',
+        prefix: 'fas'
       });
  
       
 
       props.pins.forEach((pin) => {
         if (pin.latitude && pin.longitude && pin.opportunity_id) {
-          L.marker([pin.latitude, pin.longitude], {icon: redMarker}).addTo(mymap)
+          L.marker([pin.latitude, pin.longitude], {icon: heartMarker}).addTo(mymap)
           .bindPopup("<p><b>Volunteer Opportunity</b>: " + pin.opportunity_id + "</p><p><b>Title</b>: " + pin.title + "</p><p><b>Website</b>: <a href=" + pin.website + " target='_blank'>" + pin.website + "</a></p><p><b>Summary</b>: " + pin.summary + "</p><p><b>Address</b>: " + pin.street_address + ", " + pin.city + ", " + pin.state +" "+ pin.postcode +"</p><p><b>Recurrence Type</b>: " + pin.recurrence_type + "</p>")
         } 
       })

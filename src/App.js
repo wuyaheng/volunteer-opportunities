@@ -114,7 +114,7 @@ class App extends Component {
       <div className="row mt-1 mb-0 flex">
 
       <div className="col-md-4">
-      <div className="card">
+      <div className="card" style={{height: "66vh"}}>
       <div className="searchCard">
       <h6 className="pl-2"><b>Choose a Neighborhood</b></h6> 
         <SearchForm results={this.state.nta} handleInputChange={this.handleInputChange} /> 
