@@ -1,5 +1,5 @@
 # NYC Volunteer Opportunities
-![volunteerOpp](https://user-images.githubusercontent.com/52837649/107301219-1147b100-6a49-11eb-8ccc-e8a31e8cec22.png)
+![volunteer](https://user-images.githubusercontent.com/52837649/111875306-76a78f80-896f-11eb-954a-87efa9e5ffd8.png)
 
 ## Description
 NYC Volunteer Opportunities is a search tool that allows users to find available volunteer opportunities in New York City. Users can either click on the marker of the map to know more about the volunteer opportunities in the selected location, or they can use the drop-down on the left side to filter down to a specific neighborhood or volunteer opportunity. After that, only selected volunteer information will be shown on the map and the table below. 
