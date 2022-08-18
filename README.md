@@ -26,8 +26,6 @@ https://volunteer-nyc.netlify.app/
 Click on marker of the map to know more about the volunteer opportunity
 
 ## Questions
-![user profile image](https://avatars.githubusercontent.com/u/52837649?v=4)
-
 For questions about the project contact wuyaheng or directly at wuyaheng2016@gmail.com.
 
 
